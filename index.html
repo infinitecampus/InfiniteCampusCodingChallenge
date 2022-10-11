@@ -19,31 +19,35 @@
         </h1>
       </header>
 
-      <table id="gradebook" class="table w-100">
+      <h1 x-data="{ message: 'I love Alpine' }" x-text="message"></h1>
+
+      <table class="table w-100" x-data="gradebook">
         <thead>
           <tr>
             <th scope="col">Assignment Name</th>
-            <!-- ko foreach: students -->
-            <th><span data-bind="text: firstName"/></th>
-            <!-- /ko -->
+            <template x-for="student in students">
+              <th x-text="student.firstName"></th>
+            </template>
           </tr>
         </thead>
-        <tbody data-bind="foreach: { data: gradeBookGridInfo, as: 'assignment', noChildContext: true}">
-          <tr>
-            <td data-bind="text: assignment.name"></td>
-            <!-- ko foreach: {data: students, as: 'student', noChildContext: true} -->
-            <td>
-              <!--<span data-bind="text: getScore(assignment.id, student.id).score"></span>-->
-              <input type="text" data-bind="value: getScore(assignment.id, student.id).score"></input>
-            </td>
-            <!-- /ko -->
-          </tr>
+        <tbody>
+          <template x-for="assignment in assignments">
+            <tr>
+              <td x-text="assignment.name"></td> 
+              <template x-for="student in students">
+                <td>
+                  <input type="text" x-bind:value="getScore(assignment.id, student.id).score"></input>
+                </td>
+              </template>
+            </tr>
+          </template>
         </tbody>
       </table>
+
     </div>
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script type="module" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </body>
 </html>

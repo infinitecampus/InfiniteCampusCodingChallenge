@@ -1,18 +1,19 @@
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
-class GradeBookViewModel {
-  assignments = [
-    {
-      id: 1,
-      name: "Multiplication Worksheet"
-    },
-    {
-      id: 2,
-      name: "Division Quiz"
-    }
+document.addEventListener('alpine:init', () => {
+
+  const assignments = [
+      {
+        id: 1,
+        name: "Multiplication Worksheet"
+      },
+      {
+        id: 2,
+        name: "Division Quiz"
+      }
   ];
 
-  students = [
+  const students = [
     {
       id: 1,
       firstName: "Bert",
@@ -31,7 +32,7 @@ class GradeBookViewModel {
     }
   ];
 
-  scores = [
+  const scores = [
     {
       studentID: 1,
       assignmentID: 1,
@@ -54,27 +55,12 @@ class GradeBookViewModel {
     },
   ];
 
-  gradeBookGridInfo = ko.pureComputed(function() {
-    console.log("In here");
-
-    const mappedAssignments = this.assignments.map(a => {
-      a.scores = this.students.map(s => {
-        return {
-          score: this.scores.filter(score => score.assignmentID === a.id && score.studentID === s.id)[0]
-        };
-      });
-      return a;
-    });
-
-    console.log(mappedAssignments);
-
-    return mappedAssignments;
-
-  }, this);
-
-  getScore (assignmentID, studentID) {
-    return this.scores.filter(s => s.assignmentID === assignmentID && s.studentID === studentID)[0];
-  }
-}
-
-ko.applyBindings(new GradeBookViewModel());
+  Alpine.data("gradebook", () => ({
+    assignments: assignments,
+    students: students,
+    scores: scores,
+    getScore: (assignmentID, studentID) => {
+      return scores.filter(s => s.assignmentID === assignmentID && s.studentID === studentID)[0];
+    }
+  }));
+});
