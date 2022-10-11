@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/campus.css">
+    <title>Infinite Campus Coding Challenge</title>
+  </head>
+  <body>
+    <div class="py-2 px-3 mx-auto">
+
+      <header class="pb-3 mb-5 border-bottom">
+        <h1 class="h4 campus-header">
+          <a href="/" class="d-flex align-items-center text-light text-decoration-none">
+            <img src="https://www.infinitecampus.com/img/logo.svg"/>
+            <span class="mx-3">Infinite Campus Grade Book</span>
+          </a>
+        </h1>
+      </header>
+
+      <table id="gradebook" class="table w-100">
+        <thead>
+          <tr>
+            <th scope="col">Assignment Name</th>
+            <!-- ko foreach: students -->
+            <th><span data-bind="text: firstName"/></th>
+            <!-- /ko -->
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: { data: gradeBookGridInfo, as: 'assignment', noChildContext: true}">
+          <tr>
+            <td data-bind="text: assignment.name"></td>
+            <!-- ko foreach: {data: students, as: 'student', noChildContext: true} -->
+            <td>
+              <!--<span data-bind="text: getScore(assignment.id, student.id).score"></span>-->
+              <input type="text" data-bind="value: getScore(assignment.id, student.id).score"></input>
+            </td>
+            <!-- /ko -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  </body>
+</html>
