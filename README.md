@@ -77,12 +77,38 @@ Once that command completes, you should be ready to start the application!
 $ npm run start
 ```
 
-## Completing the Challenge
+Open up your favorite web browser and put this in the URL bar: http://localhost:3000
+
+## The Challenge
 
 ### Intermediate Challenge
 
-TODO
+Your product manager approached you and told you that the marketing department decided to go under a company-wide rebranding!
+
+They would like you to change the header of the webpage from the Infinite Campus green to a dark blue instead.
+
+#### Hints/Tips
+1. Most webpage styles and formats are expressed in files called Cascading Style Sheets (ending in .css).  These style sheets are where you can define things like font size, positioning, colors, etc.
+2. Colors can be expressed in multiple different formats. Our colors are expressed as a 6-character hexadecimal string.  Look here for more information on defining colors in web sitesOur colors are expressed as a 6-character hexadecimal string.  Look [here](https://htmlcolorcodes.com/) for more information on defining colors in web sites.
 
 ### Hard Challenge
 
-TODO
+BUG REPORT!  Your product manager received a bug report from a customer and was able to replicate the issue on your team's test site.
+
+REPLICATION STEPS:
+1. Open the Grade Book
+2. Click in any one of the score fields
+3. Enter a score (or change the score if one already existed)
+4. Without clicking anything else on the screen, click save
+5. Refresh the screen
+6. Note that the value did not save properly
+
+NOTE: If you make a change to a field, then click away to another field, then click save then the issue does not occur.
+
+Your job is to figure out how to fix this bug and submit the fixed code.
+
+#### Hints/Tips
+1. There are couple pieces of logic in play here.  There is the code that fires when a value on the screen changes, and the code that fires when the save button is pressed.  This is all user interface code.  Look around for a JavaScript file (.js) that may have this logic.
+2. The logic relies on something called "DOM events".  These are functions that kick off when certain things on the screen happen like "Input changed" or "Button pressed".
+
+## Submitting Your Result

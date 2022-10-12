@@ -17,6 +17,7 @@ document.addEventListener('alpine:init', () => {
       $("#assignmentDetails").modal("show");
     },
     getScore(assignmentID, studentID) {
+      // For a given assignmentID and studentID get the corresponding score if one exists
       const matchingScores = this.scores.filter(s => s.assignmentID === assignmentID && s.studentID === studentID);
       if(!!matchingScores && matchingScores.length > 0) {
         return matchingScores[0].score;
@@ -26,6 +27,7 @@ document.addEventListener('alpine:init', () => {
     },
     scoreChanged(assignmentID, studentID, event) {
 
+      // Convert the score from a string to a number
       const score = parseInt(event.target.value);
 
       // Find the corresponding score for this assignmentID and studentID
@@ -44,7 +46,7 @@ document.addEventListener('alpine:init', () => {
       }
     },
     save() {
-      console.log("Saving");
+      // Save the scores back to the server
       fetch('/api/scores', {
         method: 'POST',
         headers: {
