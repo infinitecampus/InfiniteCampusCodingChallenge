@@ -11,6 +11,11 @@ document.addEventListener('alpine:init', () => {
     students: [],
     assignments: [],
     scores: [],
+    selectedAssignment: {name: ""},
+    selectAssignment(assignment) {
+      this.selectedAssignment = assignment;
+      $("#assignmentDetails").modal("show");
+    },
     getScore(assignmentID, studentID) {
       const matchingScores = this.scores.filter(s => s.assignmentID === assignmentID && s.studentID === studentID);
       if(!!matchingScores && matchingScores.length > 0) {

@@ -3,3 +3,6 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+.table-bordered th, .table-bordered td { border: 1px solid #ddd!important; padding:5px; } 
+

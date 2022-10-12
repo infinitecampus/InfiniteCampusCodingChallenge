@@ -20,10 +20,12 @@
         </h1>
       </header>
 
-      <table class="table w-100">
+      <table class="table w-100 table-bordered">
         <thead>
           <tr>
-            <th scope="col">Assignment Name</th>
+            <th scope="col">
+              <h4>Assignment Name</h4>
+            </th>
             <template x-for="student in students">
               <th x-text="student.firstName"></th>
             </template>
@@ -32,7 +34,14 @@
         <tbody>
           <template x-for="assignment in assignments">
             <tr>
-              <td x-text="assignment.name"></td> 
+              <td>
+                <b style="cursor:pointer;" x-on:click="selectAssignment(assignment)" x-text="assignment.name"></b>
+                <div> 
+                  <small><em>
+                    Points Possible: <span x-text="assignment.totalPoints"></span>
+                  </em></small>
+                </div>
+              </td> 
               <template x-for="student in students">
                 <td>
                   <input type="text" x-bind:value="getScore(assignment.id, student.id)" x-on:change.debounce="scoreChanged(assignment.id, student.id, $event)"></input>
@@ -43,7 +52,25 @@
         </tbody>
       </table>
 
-      <button type="button" class="btn btn-primary" x-on:click="save()">Save</button>
+      <button type="button" class="btn btn-primary mt-3" x-on:click="save()">Save</button>
+
+      <!-- Assignment Details Modal -->
+      <div class="modal fade" id="assignmentDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="fs-5" id="exampleModalLabel" x-text="selectedAssignment.name"></h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div x-text="selectedAssignment.description">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 

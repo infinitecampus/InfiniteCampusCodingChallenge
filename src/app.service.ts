@@ -7,14 +7,21 @@ export class AppService {
     {
       id: 1,
       name: 'Multiplication Worksheet',
+      description: 'Fill out this worksheet, and be sure to show your work!',
+      totalPoints: 100,
     },
     {
       id: 2,
       name: 'Division Quiz',
+      description: 'Pop quiz time!',
+      totalPoints: 10,
     },
     {
       id: 3,
       name: 'Pythagorean Theorem Essay',
+      description:
+        'Write a 1,000 word essay on the importance of the Pythagorean theorem in modern geometry',
+      totalPoints: 50,
     },
   ];
 

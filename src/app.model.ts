@@ -7,6 +7,8 @@ export interface IStudent {
 export interface IAssignment {
   id: number;
   name: string;
+  description: string;
+  totalPoints: number;
 }
 
 export interface IScore {
