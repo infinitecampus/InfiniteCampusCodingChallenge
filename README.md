@@ -42,7 +42,7 @@ It is tremendously useful, but also can be complicated to get started with.
 
 If you are up to the challenge, you can download this code repository by installing Git and using the "git clone" command to download it onto your computer.
 
-See a tutorial here
+See a tutorial [here](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
 
 ### Option 2 - Directly download
 If instead you don't want to learn yet another thing, you can feel free to skip the git portion and directly download the code repository.
