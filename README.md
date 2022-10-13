@@ -53,11 +53,10 @@ Locate that file in your file system and extract that zip and you have the code 
 
 Much of the software delivered in the world doesn't live in a silo.  Programs are written with hundreds of dependencies of other programs that exist in the world in the form of open source software.
 This program is no exception.  Some of the open source technologies being used here are:
-| Open Source Software | Description                                      |
-| NodeJS               | This is the tool that actually runs the program. |
-| AlpineJS             |                                                  |
-| jQuery               |                                                  |
-| NestJS               |                                                  |
+| Open Source Software              | Description                                                                      |
+| NodeJS                            | This is the tool that actually runs the program.                                 |
+| [AlpineJS](https://alpinejs.dev/) | This is a JavaScript library that helps a developer write interactive webpages   |
+| NestJS                            | This is a JavaScript library for writing the server portion of a web application [|](|)
 
 
 1. Open your terminal/command prompt
