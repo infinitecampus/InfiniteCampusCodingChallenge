@@ -88,7 +88,7 @@ They would like you to change the header of the webpage from the Infinite Campus
 
 #### Hints/Tips
 1. Most webpage styles and formats are expressed in files called Cascading Style Sheets (ending in .css).  These style sheets are where you can define things like font size, positioning, colors, etc.
-2. Colors can be expressed in multiple different formats. Our colors are expressed as a 6-character hexadecimal string.  Look here for more information on defining colors in web sitesOur colors are expressed as a 6-character hexadecimal string.  Look [here](https://htmlcolorcodes.com/) for more information on defining colors in web sites.
+2. Colors can be expressed in multiple different formats. Our colors are expressed as a 6-character hexadecimal string. Look [here](https://htmlcolorcodes.com/) for more information on defining colors in web sites.
 
 ### Advanced Challenge
 
