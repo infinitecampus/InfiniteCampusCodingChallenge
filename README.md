@@ -112,8 +112,6 @@ Your job is to figure out how to fix this bug and submit the fixed code.
 
 ## Submitting Your Result
 
-Once you have made your changes you need to zip up your submission and submit it to the infinitecampus.com website.
-
 ### Create Submission
 
 In your command prompt, run this command:
@@ -123,11 +121,8 @@ node create-submission.js
 
 This will create a file called "my-submission.zip"
 
-### Go to submissions page
+### Submit your work 
 
-Open your web browser and go to  [this](https://www.infinitecampus.com/info/careers-in-coding) page 
+Click [here](https://infinitecampus.wufoo.com/forms/coding-challenge-entry) to submit the generated file
 
-### Fill Out the Form
-
-Enter your information.  Where it says "Attach your Submission" select the file "my-submission.zip"
 
