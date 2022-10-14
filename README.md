@@ -84,7 +84,7 @@ Open up your favorite web browser and put this in the URL bar: http://localhost:
 
 Your product manager approached you and told you that the marketing department decided to go under a company-wide rebranding!
 
-They would like you to change the header of the webpage from the Infinite Campus green to a dark blue instead.
+They would like you to change the header of the webpage from the Infinite Campus green to a blue instead.
 
 #### Hints/Tips
 1. Most webpage styles and formats are expressed in files called Cascading Style Sheets (ending in .css).  These style sheets are where you can define things like font size, positioning, colors, etc.
